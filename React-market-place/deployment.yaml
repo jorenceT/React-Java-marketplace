@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: ecommerce-api
-    runtime: docker
-    dockerfilePath: backend/Dockerfile
-    dockerContext: backend
-    plan: free

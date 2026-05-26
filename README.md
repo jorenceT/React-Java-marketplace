@@ -43,16 +43,22 @@ java -cp backend/target/classes com.example.ecommerce.EcommerceBackendApplicatio
 
 ## Deploy
 
-- GitHub Pages UI workflow: [`.github/workflows/deploy-ui.yml`](D:/coding/React-market-place/.github/workflows/deploy-ui.yml)
-- Render blueprint for the API: [`render.yaml`](D:/coding/React-market-place/render.yaml)
+- GitHub Pages UI workflow: [`.github/workflows/deploy-ui.yml`](.github/workflows/deploy-ui.yml)
+- Backend image publish workflow: [`.github/workflows/deploy-backend.yml`](.github/workflows/deploy-backend.yml)
 
-Set a repository variable named `VITE_API_BASE_URL` to your Render API URL, for example:
+The backend workflow publishes a Docker image to GitHub Container Registry as:
 
 ```text
-https://your-service.onrender.com/api
+ghcr.io/<your-owner>/react-market-place-backend:latest
 ```
 
-The GitHub Pages workflow will inject that URL at build time so the static UI can talk to the Render-hosted API.
+Set a repository variable named `VITE_API_BASE_URL` to the public URL where that backend is running, for example:
+
+```text
+https://api.example.com/api
+```
+
+The GitHub Pages workflow will inject that URL at build time so the static UI can talk to the backend.
 
 ## API
 
